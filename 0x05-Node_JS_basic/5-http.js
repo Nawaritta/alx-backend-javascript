@@ -28,17 +28,17 @@ async function countStudents(path) {
         }
         let ret = '';
         ret += 'This is the list of our students\n';
-        ret += `Number of students: ${totalStudents}\n`;
+        ret += `Number of students: ${totalStudents}`;
         // eslint-disable-next-line guard-for-in
         for (const field in fields) {
           const count = fields[field].length;
           const list = fields[field].join(', ');
-          ret += `Number of students in ${field}: ${count}. List: ${list}`;
+          ret += `\nNumber of students in ${field}: ${count}. List: ${list}`;
         }
         resolve(ret);
       })
       .catch(() => {
-        reject(new Error('Cannot load the database'));
+        reject(new Error('CCannot load the database'));
       });
   });
 }
