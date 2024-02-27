@@ -38,7 +38,7 @@ async function countStudents(path) {
         resolve(ret);
       })
       .catch(() => {
-        reject(new Error('CCannot load the database'));
+        reject(new Error('Cannot load the database'));
       });
   });
 }
@@ -56,7 +56,7 @@ const app = http.createServer((req, res) => {
         res.end(output);
       })
       .catch((error) => {
-        res.end(`This is the list of our students\n${error}`);
+        res.end('This is the list of our students\nCannot load the database');
       });
   }
 
