@@ -10,7 +10,6 @@ async function countStudents(path) {
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) {
         reject(new Error('Cannot load the database'));
-        return;
       }
 
       const lines = data.trim().split('\n').filter((line) => line.trim() !== '');
@@ -56,7 +55,7 @@ const app = http.createServer((req, res) => {
         res.end(output);
       })
       .catch((error) => {
-        res.end(`This is the list of our students\n${error}`);
+        res.end(`${error}`);
       });
   }
 });
