@@ -48,18 +48,16 @@ const app = http.createServer((req, res) => {
 
   if (url === '/') {
     res.end('Hello Holberton School!');
-  }
-  else if (url === '/students') {
+  } else if (url === '/students') {
     const path = process.argv[2];
     countStudents(path)
       .then((output) => {
         res.end(output);
       })
       .catch((error) => {
-        res.end('This is the list of our students\nCannot load the database');
+        res.end(`This is the list of our students\n${error.message}`);
       });
   }
-
 });
 
 app.listen(port);
