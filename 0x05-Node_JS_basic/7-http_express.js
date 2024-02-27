@@ -7,7 +7,7 @@ const app = express();
 const path = process.argv[2];
 const fs = require('fs');
 
-function countStudents(path) {
+async function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) {
@@ -54,7 +54,7 @@ app.get('/students', (req, res) => {
       res.send(output);
     })
     .catch((error) => {
-      console.error(error);
+      res.end(`This is the list of our students\n ${error}`);
     });
 });
 

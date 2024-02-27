@@ -5,7 +5,7 @@ const http = require('http');
 const port = 1245;
 const fs = require('fs');
 
-function countStudents(path) {
+async function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) {
@@ -56,7 +56,7 @@ const app = http.createServer((req, res) => {
         res.end(output);
       })
       .catch((error) => {
-        console.log(error);
+        res.end(error);
       });
   }
 });
