@@ -33,9 +33,9 @@ async function countStudents(path) {
         for (const field in fields) {
           const count = fields[field].length;
           const list = fields[field].join(', ');
-          ret += `Number of students in ${field}: ${count}. List: ${list}\n`;
+          ret += `Number of students in ${field}: ${count}. List: ${list}`;
         }
-        resolve(ret.slice(0, -1));
+        resolve(ret);
       })
       .catch(() => {
         reject(new Error('Cannot load the database'));
@@ -49,7 +49,7 @@ const app = http.createServer((req, res) => {
   if (url === '/') {
     res.end('Hello Holberton School!');
   }
-  if (url === '/students') {
+  else if (url === '/students') {
     const path = process.argv[2];
     countStudents(path)
       .then((output) => {
@@ -59,6 +59,7 @@ const app = http.createServer((req, res) => {
         res.end(`This is the list of our students\n${error}`);
       });
   }
+
 });
 
 app.listen(port);
