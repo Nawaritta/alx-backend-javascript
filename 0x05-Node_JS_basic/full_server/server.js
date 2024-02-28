@@ -3,7 +3,7 @@ const express = require('express');
 const port = 1245;
 const app = express();
 
-routes(app);
+app.use('/', routes);
 app.listen(port);
 export default app;
 
