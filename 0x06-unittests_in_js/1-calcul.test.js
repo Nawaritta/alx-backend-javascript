@@ -20,11 +20,11 @@ describe('calculateNumber', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 4.5), -4);
     });
     it('substract negative numbers', () => {
-      assert.strictEqual(calculateNumber('SUM', -1, -4.8), 4);
+      assert.strictEqual(calculateNumber('SUBTRACT', -1, -4.8), 4);
     });
 
     it('substract a positive and a negative numbers', () => {
-      assert.strictEqual(calculateNumber('SUM', -1.5, 2), -4);
+      assert.strictEqual(calculateNumber('SUBTRACT', -1.5, 2), -3);
     });
   });
 

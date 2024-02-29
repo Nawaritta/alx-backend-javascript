@@ -15,4 +15,11 @@ describe('calculateNumber', () => {
   it('add a positive and a negative numbers', () => {
     assert.strictEqual(calculateNumber(-1.5, 2), 1);
   });
+  it('add a zero to a negative number', () => {
+    assert.strictEqual(calculateNumber(-1.5, 0), -1);
+  });
+
+  it('add a zero to a positive number', () => {
+    assert.strictEqual(calculateNumber(1.5, 0), 2);
+  });
 });
