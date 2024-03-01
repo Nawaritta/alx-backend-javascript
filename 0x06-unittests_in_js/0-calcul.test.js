@@ -3,7 +3,16 @@
 const assert = require('assert');
 const calculateNumber = require('./0-calcul');
 
+
+
 describe('calculateNumber', () => {
+  it('return sum of rounded numbers', () => {
+    assert.equal(calculateNumber(-1.7, -2), -4);
+  });
+  it('return sum of rounded numbers', () => {
+    assert.equal(calculateNumber(-1, -2.7), -4);
+  });
+
   it('return sum of rounded numbers', () => {
     assert.equal(calculateNumber(1.2, 3.7), 5);
   });
@@ -31,7 +40,7 @@ describe('calculateNumber', () => {
     assert.equal(calculateNumber(1, 3.7), 5);
   });
 
- it('add floats', () => {
+  it('add floats', () => {
     assert.equal(calculateNumber(1.5, 3.7), 6);
   });
 
