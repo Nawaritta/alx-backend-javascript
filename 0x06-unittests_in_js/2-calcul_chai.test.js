@@ -26,7 +26,7 @@ describe('calculateNumber', () => {
     });
 
     it('subtract a positive and a negative numbers', () => {
-      expect(calculateNumber('SUBTRACT', -1.5, 2)).to.equal(-4);
+      expect(calculateNumber('SUBTRACT', -1.5, 2)).to.equal(-3);
     });
   });
 
