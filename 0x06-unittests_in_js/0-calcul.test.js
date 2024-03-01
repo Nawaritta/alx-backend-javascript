@@ -20,7 +20,7 @@ describe('calculateNumber', () => {
   });
 
   it('add a zero to a positive number', () => {
-    assert.strictEqual(calculateNumber(1.5, 0), 2);
+    assert.equal(calculateNumber(1.5, 0), 2);
   });
 
   it('add two int', () => {
@@ -34,4 +34,17 @@ describe('calculateNumber', () => {
  it('add floats', () => {
     assert.equal(calculateNumber(1.5, 3.7), 6);
   });
+
+  //
+  it('add a positive and a negative numbers', () => {
+    assert.equal(calculateNumber(2, -1.5), 1);
+  });
+  it('add a zero to a negative number', () => {
+    assert.equal(calculateNumber(0, -1.5), -1);
+  });
+
+  it('add a zero to a positive number', () => {
+    assert.equal(calculateNumber(0, 1.5), 2);
+  });
+
 });
