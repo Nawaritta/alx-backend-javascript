@@ -22,7 +22,6 @@ class StudentsController {
     const major = request.params.major.replace(/:/g, '');
     if (major !== 'CS' && major !== 'SWE') {
       response.status(500).send('Major parameter must be CS or SWE');
-      return;
     }
     const path = process.argv[2];
     readDatabase(path)
@@ -32,8 +31,8 @@ class StudentsController {
         ret += `List: ${list}`;
         response.status(200).send(ret);
       })
-      .catch((err) => {
-        response.status(500).send(`${err}`);
+      .catch(() => {
+        response.status(500).send("");
       });
   }
 }
