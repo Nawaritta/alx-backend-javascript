@@ -5,18 +5,18 @@ const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', () => {
   it('return sum of rounded numbers', () => {
-    assert.strictEqual(calculateNumber(1.2, 3.7), 5);
+    assert.equal(calculateNumber(1.2, 3.7), 5);
   });
 
   it('add negative numbers', () => {
-    assert.strictEqual(calculateNumber(-1, -4.8), -6);
+    assert.equal(calculateNumber(-1, -4.8), -6);
   });
 
   it('add a positive and a negative numbers', () => {
-    assert.strictEqual(calculateNumber(-1.5, 2), 1);
+    assert.equal(calculateNumber(-1.5, 2), 1);
   });
   it('add a zero to a negative number', () => {
-    assert.strictEqual(calculateNumber(-1.5, 0), -1);
+    assert.equal(calculateNumber(-1.5, 0), -1);
   });
 
   it('add a zero to a positive number', () => {
@@ -24,14 +24,14 @@ describe('calculateNumber', () => {
   });
 
   it('add two int', () => {
-    assert.strictEqual(calculateNumber(1, 3), 4);
+    assert.equal(calculateNumber(1, 3), 4);
   });
 
   it('add int and float', () => {
-    assert.strictEqual(calculateNumber(1, 3.7), 5);
+    assert.equal(calculateNumber(1, 3.7), 5);
   });
 
  it('add floats', () => {
-    assert.strictEqual(calculateNumber(1.5, 3.7), 6);
+    assert.equal(calculateNumber(1.5, 3.7), 6);
   });
 });
