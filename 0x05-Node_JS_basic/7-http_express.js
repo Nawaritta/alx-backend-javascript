@@ -45,7 +45,7 @@ async function countStudents(path) {
 }
 
 app.get('/', (req, res) => {
-  res.send('Hello Holberton School!');
+  res.status(200).send('Hello Holberton School!');
 });
 
 app.get('/students', (req, res) => {

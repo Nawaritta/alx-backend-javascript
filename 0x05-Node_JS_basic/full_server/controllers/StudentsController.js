@@ -15,7 +15,7 @@ class StudentsController {
       response.status(200).send(ret);
     })
       .catch(() => {
-        response.status(500).send("Cannot load the database");
+        response.status(500).send('Cannot load the database');
       });
   }
 
