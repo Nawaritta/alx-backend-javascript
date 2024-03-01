@@ -1,11 +1,10 @@
 const readDatabase = require('../utils');
-
 class StudentsController {
   static getAllStudents(request, response) {
     const path = process.argv[2];
     readDatabase(path).then((fields) => {
       let ret = '';
-      ret += 'This is the list of our students\n';
+      ret += 'This is the list of our students';
 
       Object.keys(fields).sort((a, b) => a.localeCompare(b)).forEach((field) => {
         const count = fields[field].length;
