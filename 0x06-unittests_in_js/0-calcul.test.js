@@ -22,4 +22,16 @@ describe('calculateNumber', () => {
   it('add a zero to a positive number', () => {
     assert.strictEqual(calculateNumber(1.5, 0), 2);
   });
+
+  it('add two int', () => {
+    assert.strictEqual(calculateNumber(1, 3), 4);
+  });
+
+  it('add int and float', () => {
+    assert.strictEqual(calculateNumber(1, 3.7), 5);
+  });
+
+ it('add floats', () => {
+    assert.strictEqual(calculateNumber(1.5, 3.7), 6);
+  });
 });
